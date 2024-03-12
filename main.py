@@ -34,6 +34,10 @@ async def on_ready():
     except Exception as e:
         print(f"Failed to sync commands: {e}")
 
+@bot.tree.command(guild=discord.Object, name="karl", description="test karl")
+async def karl_slash(interaction : discord.Interaction):
+    await interaction.response.send_message("Karl Slash")
+
 @bot.tree.command(guild=discord.Object(id=1138070170129149994), name="test", description="Test command")
 async def test_slash(interaction: discord.Interaction):
     await interaction.response.send_message("TEST!", ephemeral=True)
